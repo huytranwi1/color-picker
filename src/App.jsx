@@ -12,14 +12,19 @@ const App = () => {
       <div id="colors-list">
         <Color color="blue" setSelectedColor={setSelectedColor} />
         <Color color="violet" setSelectedColor={setSelectedColor} />
-        <Color color="black" setSelectedColor={setSelectedColor} />
+        <Color color="red" setSelectedColor={setSelectedColor} />
       </div>
     </div>
   );
 };
 
 const Color = ({ color, setSelectedColor }) => {
-  return <div className={color} onClick={() => setSelectedColor(color)}></div>;
+  return (
+    <div
+      className={`${color} ${"selected"}`}
+      onClick={() => setSelectedColor(color)}
+    ></div>
+  );
 };
 
 export default App;
